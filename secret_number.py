@@ -1,10 +1,15 @@
-secret = 33
-user_i = int(input("Enter a lucky number(1-99) :"))
-if secret == user_i:
-    print("Congratulations, money is yours!")
-elif user_i < 1:
-    print("Unrecognized number")
-elif user_i > 99:
-    print("Unrecognized number")
-else:
-    print("Wrong")
+import random
+
+
+secret = random.randint(1, 99)
+
+while True:
+    guess = int(input("Guess the secret number (between 1 and 99): "))
+
+    if guess == secret:
+        print("You've guessed it - congratulations! It's number " + str(secret))
+        break
+    elif guess > secret:
+        print("Your guess is not correct... try something smaller")
+    elif guess < secret:
+        print("Your guess is not correct... try something bigger")
